@@ -1,6 +1,10 @@
+.advantages {
+    background-color: #F5FCFD;
+}
+
 .advantages__container {
     padding-top: 215px;
-    padding-bottom: 30px;
+    padding-bottom: 130px;
 }
 
 .advantages__list {
@@ -11,15 +15,22 @@
 }
 
 .advantages__item {
+    position: relative;
     max-width: 362px;
     padding: 135px 15px 47px;
     margin-right: 30px;
     box-shadow: 0px 4px 16px rgba(0, 66, 148, 0.08);
     border-radius: 5px;
+    background-position: center 15%;
+    background-repeat: no-repeat;
 }
 
 .advantages__item:last-child {
     margin-right: 0;
+}
+
+.advantages__item:nth-child(2n) {
+    top: 35px;
 }
 
 .advantages__title {
@@ -29,4 +40,16 @@
 
 .advantages__text {
     text-align: center;
+}
+
+.one {
+    background-image: url("../img/analysis.svg");
+}
+
+.two {
+    background-image: url("../img/design.svg");
+}
+
+.three {
+    background-image: url("../img/messanging.svg");
 }

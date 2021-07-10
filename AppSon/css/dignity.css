@@ -1,0 +1,64 @@
+.dignity {
+    position: relative;
+}
+ 
+.blue-card {
+    position: absolute;
+    left: 20%;
+    width: 390px;
+    height: 483px;
+    background: linear-gradient(147.4deg, #0F7BFF 7.27%, #0063DD 93.68%);
+    border-radius: 40px;
+    transform: rotate(-45deg); 
+}
+
+.blue-card.bottom {
+    bottom: 8%;
+    left: 62%;
+}
+
+.dignity__container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 60px;
+    padding-bottom: 200px;
+}
+
+.dignity__top {
+    padding: 94px 20px 54px 686px;
+    margin-bottom: 233px;
+    background-image: url("../img/girl.jpg");
+    background-repeat: no-repeat;
+    background-position: left;
+    z-index: +1;
+}
+
+.dignity__bottom {
+    padding: 99px 505px 84px 0;
+    background-image: url("../img/boy.jpg");
+    background-repeat: no-repeat;
+    background-position: right;
+    z-index: +1;
+}
+
+.dignity__heading {
+    margin-bottom: 30px;
+}
+
+.dignity__text {
+    margin-bottom: 35px;
+    max-width: 543px;
+}
+
+.dignity__link {
+    /* display: block; */
+    padding-right: 82px;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    color: #0063DD;
+    background-image: url("../img/Arrow.svg");
+    background-repeat: no-repeat;
+    background-position: right;
+}

@@ -1,0 +1,135 @@
+.footer__top {
+    background-color: #0F7BFF;
+}
+
+.footer__container.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 118px;
+    padding-bottom: 118px;
+}
+
+.footer__logo {
+    margin-bottom: 30px;
+}
+
+.form {
+    display: flex;
+    align-items: center;
+}
+
+.form__input {
+    margin: 0;
+    padding: 11px 28px 15px 28px;
+    width: 558px;
+    height: 50px;
+    border: none;
+    border-radius: 25px 0px 0px 25px;
+    background-color: #0063DD;
+}
+
+.form__input::placeholder {
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.form_btn {
+    padding: 11px 38px;
+    border: 2px solid #FFFFFF;
+    border-radius: 0px 25px 25px 0px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 24px;
+    color: #0063DD;
+    background-color: #FFFFFF;
+}
+
+.footer__bottom {
+    background-color: #0063DD;
+}
+
+.footer__container.bottom {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+
+.copyright {
+    margin-right: 248px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #FFFFFF;
+}
+
+.footer__list {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 84px;
+    list-style: none;
+}
+
+.footer__item {
+    margin-right: 30px;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #FFFFFF
+}
+
+.footer__item:last-child {
+    margin-right: 0;
+}
+
+.netzwerke {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    margin-right: 160px;
+    list-style: none;
+}
+
+.netzwerke__item {
+    margin-right: 17px;
+}
+
+.netzwerke__item:last-child {
+    margin-right: 0;
+}
+
+.netzwerke__link {
+    display: block;
+    width: 30px;
+    height: 30px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.facebook {
+    background-image: url('../img/face.svg');
+}
+
+.twitter {
+    background-image: url('../img/twitter-footer.svg');
+}
+
+.youtube {
+    background-image: url('../img/YouTube.svg');
+}
+
+.scrol-up {
+    width: 75px;
+    height: 70px;
+    border: none;
+    background-color: transparent;
+    background-image: url("../img/Scroll-up.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+}

@@ -1,0 +1,72 @@
+.reviews {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 113px;
+    padding-bottom: 140px;
+    background-color: #F5FCFD;
+    background-image: url('../img/hands.png');
+    background-repeat: no-repeat;
+    background-position: left center;
+}
+
+.reviews__heading {
+    margin-bottom: 40px;
+    font-weight: 700;
+}
+
+.swiper-container {
+    padding-bottom: 37px;
+    max-width: 1043px;
+    height: 264px;
+}
+
+.swiper-slide {
+    width: 362px;
+    padding: 40px 30px;
+    box-shadow: 0px 4px 20px rgba(0, 70, 156, 0.08);
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    background-image: url('../img/twitter.svg');
+    background-repeat: no-repeat;
+    background-position: 92% 21%;
+}
+
+.reviews__title {
+    margin-bottom: 10px;
+}
+
+.reviews__subtitle {
+    display: block;
+    margin-bottom: 25px;
+    font-size: 14px;
+    line-height: 17px;
+    color: #999999;
+}
+
+.reviews__text {
+    max-width: 332px;
+    color: #999999;
+}
+
+.swiper-pagination {
+    text-align: left;
+}
+
+.swiper-container-horizontal>.swiper-pagination-bullets, .swiper-pagination-custom, .swiper-pagination-fraction {
+    bottom: 0;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background: #F5FCFD;
+    border: 1.6px solid #0063DD;
+    border-radius: 32px;
+    opacity: 1;
+}
+
+.swiper-pagination-bullet-active {
+    width: 38.4px;
+    border-radius: 32px;
+    background: #0063DD;
+}

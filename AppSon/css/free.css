@@ -1,0 +1,35 @@
+.free {
+    background-color: #F5FCFD;
+}
+
+.free__container {
+    padding-top: 133px;
+    padding-bottom: 113px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.free__content {
+    margin-right: 154px;
+}
+
+.free__heading {
+    margin-bottom: 25px;
+    font-weight: 700;
+}
+
+.free__link {
+    display: block;
+    padding: 14px 111px 16px 68px;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    border-radius: 25px;
+    color: #ffffff;
+    background-color: #0F7BFF;
+    background-image: url('../img/arrow-white.svg');
+    background-repeat: no-repeat;
+    background-position-y: 50%;
+    background-position-x: 75%;
+}

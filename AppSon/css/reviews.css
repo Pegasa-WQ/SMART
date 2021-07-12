@@ -1,12 +1,22 @@
 .reviews {
     display: flex;
-    justify-content: flex-end;
-    padding-top: 113px;
-    padding-bottom: 140px;
+    align-items: center;
+    /* padding-top: 113px;
+    padding-bottom: 140px; */
     background-color: #F5FCFD;
-    background-image: url('../img/hands.png');
+    /* background-image: url('../img/hands.png');
     background-repeat: no-repeat;
-    background-position: left center;
+    background-position: left center; */
+    overflow: hidden;
+}
+
+.reviews__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.reviews__img {
+    margin-right: 98px;
 }
 
 .reviews__heading {
@@ -17,12 +27,13 @@
 .swiper-container {
     padding-bottom: 37px;
     max-width: 1043px;
-    height: 264px;
+    max-height: 420px;
 }
 
 .swiper-slide {
-    width: 362px;
-    padding: 40px 30px;
+    padding: 40px 5px 30px 39px; 
+    /* width: 362px; */
+    max-height: 215px;
     box-shadow: 0px 4px 20px rgba(0, 70, 156, 0.08);
     border-radius: 5px;
     background-color: #FFFFFF;
@@ -45,6 +56,7 @@
 
 .reviews__text {
     max-width: 332px;
+    line-height: 20px;
     color: #999999;
 }
 

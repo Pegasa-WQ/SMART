@@ -26,6 +26,21 @@
     font-weight: 500;
     line-height: 20px;
     color: #929292;
+    transition: all 0.3s ease 0s;
+}
+
+.menu__link:focus-visible {
+    background-color: #0F7BFF;
+    color: #fff;
+    outline: none;
+}
+
+.menu__link:hover {
+    border-bottom: 2px solid #0F7BFF;
+}
+
+.menu__link:active {
+    color: #0F7BFF;
 }
 
 .login-link {
@@ -36,6 +51,20 @@
     color: #FFFFFF;
     border-radius: 25px;
     background: #0063DD;
+    transition: all 0.3s ease 0s;
+}
+
+.login-link:focus {
+    background-color: #59a0f7;
+    outline: none;
+}
+
+.login-link:hover {
+    background-color: #0F7BFF;
+}
+
+.login-link:active {
+    background-color: #065cc5;
 }
 
 .header__burger {

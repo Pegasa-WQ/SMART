@@ -24,9 +24,22 @@
     padding: 11px 28px 15px 28px;
     width: 558px;
     height: 50px;
+    font-size: 16px;
+    line-height: 24px;
+    color: #FFFFFF;
     border: none;
     border-radius: 25px 0px 0px 25px;
     background-color: #0063DD;
+    transition: all 0.3s ease 0s;
+}
+
+.form__input:focus {
+    border: 2px solid #fff;
+    outline: none;
+}
+
+.form__input:hover {
+    background-color: #59a0f7;
 }
 
 .form__input::placeholder {
@@ -44,6 +57,23 @@
     line-height: 24px;
     color: #0063DD;
     background-color: #FFFFFF;
+    transition: all 0.3s ease 0s;
+}
+
+.form_btn:focus {
+    background-color: #59a0f7;
+    color: #ffffff;
+    outline: none;
+}
+
+.form_btn:hover {
+    background-color: #0063DD;
+    color: #ffffff;
+}
+
+.form_btn:active {
+    background-color: #065cc5;
+    color: #ffffff;
 }
 
 .footer__bottom {
@@ -77,14 +107,31 @@
 
 .footer__item {
     margin-right: 30px;
-    font-size: 16px;
-    font-weight: 300;
-    line-height: 24px;
-    color: #FFFFFF
 }
 
 .footer__item:last-child {
     margin-right: 0;
+}
+
+.footer__link {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 24px;
+    color: #FFFFFF;
+    transition: all 0.3s ease 0s;
+}
+
+.footer__link:focus-visible {
+    outline: 2px solid #fff;
+}
+
+.footer__link:hover {
+    border-bottom: 2px solid #fff
+}
+
+.footer__link:active {
+    color: #b3d1f8;
+    border: none;
 }
 
 .netzwerke {
@@ -110,6 +157,19 @@
     height: 30px;
     background-repeat: no-repeat;
     background-position: center;
+    transition: all 0.3s ease 0s;
+}
+
+.netzwerke__link:hover {
+    outline: 1px solid #fff;
+}
+
+.netzwerke__link:focus {
+    outline: 1px solid #fff;
+}
+
+.netzwerke__link:active {
+    background-color: #59a0f7;
 }
 
 .facebook {
@@ -125,11 +185,29 @@
 }
 
 .scrol-up {
-    width: 75px;
+    width: 73px;
     height: 70px;
     border: none;
+    border-radius: 60px;
     background-color: transparent;
     background-image: url("../img/Scroll-up.svg");
     background-repeat: no-repeat;
     background-position: center;
+    transition: all 0.3s linear 0s;
+}
+
+.scrol-up:hover {
+    opacity: 0.5;
+    background-color: #73b1fd;
+}
+
+.scrol-up:active {
+    opacity: 0.3;
+    background-color: #0F7BFF;
+}
+
+.scrol-up:focus-visible {
+    opacity: 0.6;
+    border: 1px solid #050e8b;
+    outline: none;
 }

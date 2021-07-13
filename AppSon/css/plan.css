@@ -27,6 +27,7 @@
 .plan__buttons {
     display: flex;
     width: 100%;
+    transition: all 0.3s ease-in-out 0s;
 }
 
 .plan__button {
@@ -39,9 +40,11 @@
     border-radius: 25px 0px 0px 25px;
     color: #ffffff;
     background-color: #0F7BFF;
+    transition: all 0.3s ease-in-out 0s;
+    cursor: pointer;
 }
 
-.plan__button.white {
+.white-btn {
     border-left: none;
     border-radius: 0px 25px 25px 0px;
     color: #0F7BFF;
@@ -50,6 +53,47 @@
 
 .plan__button.blue {
     border-right: none;
+}
+
+.white-btn:hover {
+    color: #ffffff;
+    background-color: #0F7BFF;
+} 
+
+.plan__buttons:hover > .blue {
+    color: #0F7BFF;
+    background-color: #ffffff;
+}
+
+.blue:hover {
+    color: #0F7BFF;
+    background-color: #ffffff;
+}
+
+.blue:hover + .white-btn {
+    color: #ffffff;
+    background-color: #0F7BFF;
+}
+
+.plan__button.blue:focus-visible {
+    background-color: #59a0f7;
+    outline: none;
+}
+
+.white-btn:focus-visible {
+    color: #ffffff;
+    background-color: #59a0f7;
+    outline: none;
+}
+
+.plan__button.blue:active {
+    color: #ffffff;
+    background-color: #065cc5;
+}
+
+.white-btn:active {
+    color: #ffffff;
+    background-color: #065cc5;
 }
 
 .plan__list {
@@ -122,14 +166,32 @@
     font-size: 16px;
     font-weight: 700;
     line-height: 20px;
-    border: none;
+    border: 2px solid #0F7BFF;
     border-radius: 25px;
     color: #ffffff;
     background-color: #0F7BFF;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
 }
 
 .plan__btn.white {
     border: 2px solid #0F7BFF;
     color: #0F7BFF;
     background-color: #ffffff;
+}
+
+.plan__btn:focus {
+    background-color: #59a0f7;
+    color: #ffffff;
+    outline: none;
+}
+
+.plan__btn:hover {
+    background-color: #0063DD;
+    color: #ffffff;
+}
+
+.plan__btn:active {
+    background-color: #065cc5;
+    color: #ffffff;
 }

@@ -26,7 +26,7 @@
 
 <body class="body">
     <div class="common-container">
-        <header class="header">
+        <header class="header" id="up">
             <div class="container header__container">
                 <img class="logo" src="img/logo.svg" alt="Логотип">
                 <nav id="nav" class="nav">
@@ -76,7 +76,7 @@
                             Free Trial
                         </button>
                     </div>
-                    <button class="scrol-down"></button>
+                    <a href="#down" class="scrol-down"></a>
                 </div>
             </div>
         </section>
@@ -185,7 +185,7 @@
                     </p>
                     <div class="plan__buttons">
                         <button class="plan__button blue">Monthly</button>
-                        <button class="plan__button white">Yearly</button>
+                        <button class="plan__button white-btn">Yearly</button>
                     </div>
                 </div>
                 <ul class="plan__list">
@@ -376,20 +376,26 @@
                     </form>
                 </div>
                 </div>
-                <div class="footer__bottom">
+                <div id="down" class="footer__bottom">
                     <div class="container footer__container bottom">
                     <div class="copyright">
                         © 2018 Copyright, All Rights Reserved by AppSon
                     </div>
                     <ul class="footer__list">
                         <li class="footer__item">
-                            Terms & Condition
+                            <a class="footer__link" href="#">
+                                Terms & Condition
+                            </a>
                         </li>
                         <li class="footer__item">
-                            Privacy Policy
+                            <a class="footer__link" href="#">
+                                Privacy Policy
+                            </a>
                         </li>
                         <li class="footer__item">
-                            Help
+                            <a class="footer__link" href="#">
+                                Help
+                            </a>
                         </li>
                     </ul>
                     <ul class="netzwerke">
@@ -403,7 +409,7 @@
                             <a class="netzwerke__link youtube" href="#"></a>
                         </li>
                     </ul>
-                    <button class="scrol-up"></button>
+                    <a href="#up" class="scrol-up"></a>
                 </div>
                 </div>
         </footer>

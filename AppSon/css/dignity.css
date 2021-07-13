@@ -49,7 +49,6 @@
 }
 
 .dignity__link {
-    /* display: block; */
     padding-right: 82px;
     font-size: 16px;
     font-weight: 500;
@@ -58,4 +57,18 @@
     background-image: url("../img/Arrow.svg");
     background-repeat: no-repeat;
     background-position: right;
+    transition: all 0.3s ease 0s;
+}
+
+.dignity__link:focus-visible {
+    color: #083c7a;
+    outline: 2px solid #0F7BFF;
+}
+
+.dignity__link:hover {
+    color: #0F7BFF;
+}
+
+.dignity__link:active {
+    color: #73b1fd;
 }

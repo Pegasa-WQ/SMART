@@ -46,14 +46,46 @@
     line-height: 20px;
     border: 2px solid #0F7BFF;
     border-radius: 25px;
-    color: #0F7BFF;;
+    color: #0F7BFF;
+    background-color: #ffffff;
+    transition: all 0.3s ease 0s;
+    cursor: pointer;
+}
+
+.button__hero:focus {
+    background-color: #59a0f7;
+    border: 2px solid #59a0f7;
+    color: #ffffff;
+    outline: none;
+}
+
+.button__hero:hover {
+    background-color: #0F7BFF;
+    color: #ffffff;
+}
+
+.button__hero:active {
+    background-color: #065cc5;
+    border: 2px solid #065cc5;
+    color: #ffffff;
+}
+
+.color:hover {
+    color: #0F7BFF;
     background-color: #ffffff;
 }
 
+.color:active {
+    background-color: #065cc5;
+    border: 2px solid #065cc5;
+    color: #ffffff;
+}
+
 .color {
+    margin-right: 30px;
     color: #ffffff;
     background-color: #0F7BFF;
-    margin-right: 30px;
+    transition: all 0.3s ease 0s;
 }
 
 .scrol-down {
@@ -63,11 +95,27 @@
     width: 114px;
     height: 114px;
     border: none;
+    border-radius: 60px;
     background-color: transparent;
     background-image: url("../img/Scrol.png");
     background-repeat: no-repeat;
     background-position: center;
+    transition: all 0.3s ease 0s;
 }
+
+.scrol-down:hover {
+    background-color: #73b1fd;
+}
+
+.scrol-down:active {
+    background-color: #0F7BFF;
+}
+
+.scrol-down:focus {
+    background-color: #065cc5;
+    outline: none;
+}
+
 
 .wave {
     position: absolute;

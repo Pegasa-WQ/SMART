@@ -55,6 +55,20 @@
     background-image: url('../img/Arrow.svg');
     background-repeat: no-repeat;
     background-position: right;
+    transition: all 0.3s ease 0s;
+}
+
+.news__link:focus-visible {
+    color: #083c7a;
+    outline: 2px solid #0F7BFF;
+}
+
+.news__link:hover {
+    color: #0F7BFF;
+}
+
+.news__link:active {
+    color: #73b1fd;
 }
 
 .news__right {

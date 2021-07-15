@@ -23,10 +23,57 @@ const form2 = document.getElementById('form');
 
 let object = JSON.parse(json);
 let arrayKeys = Object.keys(object);
+let fields = object.fields;
 let label = 0;
 let div = 0;
 
-function createForm(array) {
+// function createInput(array) {
+//     for (let i in array) {
+//         let fieldKeys = Object.keys(array[i]);
+//         for (let j of fieldKeys) {
+//             if (j == 'label') {
+//                 label = document.createElement('label');
+//                 label.innerHTML = array[i].label;
+//                 form2.append(label);
+//             } else if (j == 'input') {
+//                 let input = document.createElement('input');
+//                 inputKeys = Object.keys(array[i].input)
+//                 console.log(array[i].input['type'])
+//                 if (array[i].input['type'] == 'textarea') {
+//                     let textarea = document.createElement('textarea');
+//                     textarea.setAttribute("required", 'true');
+//                     form2.append(textarea);
+//                 }
+//                 for (let k of inputKeys) {
+//                     if (k == 'colors') {
+//                         arrayColors = array[i].input[k];
+//                         for (let l = 0; l < arrayColors.length; l++) {
+//                             let input = document.createElement('input');
+//                             input.setAttribute("value", arrayColors[l])
+//                             input.setAttribute("type", "color")
+//                             form2.append(input);
+//                         }
+//                     } else if (k == 'technologies') {
+//                         let select = document.createElement('select');
+//                         select.setAttribute("multiple", "true");
+//                         form2.append(select);
+//                         arrayTeсhnology = array[i].input[k];
+//                         for (let p = 0; p < arrayTeсhnology.length; p++) {
+//                             let option = document.createElement('option')
+//                             option.innerHTML = arrayTeсhnology[p];
+//                             select.append(option);
+//                         }
+//                     } else if (array[i].input[k] !== 'color' && array[i].input['type'] !== 'textarea' && array[i].input['type'] !== 'technology') {
+//                         input.setAttribute(k, array[i].input[k])
+//                         form2.append(input);
+//                     }
+//                 }
+//             }
+//         }
+//     }
+// }
+
+function createInput2(array) {
     for (let i in array) {
         let fieldKeys = Object.keys(array[i]);
         for (let j of fieldKeys) {
@@ -35,35 +82,40 @@ function createForm(array) {
                 label.innerHTML = array[i].label;
                 form2.append(label);
             } else if (j == 'input') {
-                let input = document.createElement('input');
                 inputKeys = Object.keys(array[i].input)
-                if (array[i].input['type'] == 'textarea') {
+                if (['email', 'password', 'number', 'file', 'text', 'date', 'checkbox'].includes(array[i].input['type'])) {
+                    let input = document.createElement('input');
+                    input.type = array[i].input['type'];
+                    for (let k of inputKeys) {
+                        input.setAttribute(k, array[i].input[k])
+                        form2.append(input);
+                    }
+                } else if (array[i].input['type'] == 'textarea') {
                     let textarea = document.createElement('textarea');
                     textarea.setAttribute("required", 'true');
                     form2.append(textarea);
-                }
-                for (let k of inputKeys) {
-                    if (k == 'colors') {
-                        arrayColors = array[i].input[k];
+                } else if (array[i].input['colors']) {
+                    arrayColors = array[i].input['colors'];
                         for (let l = 0; l < arrayColors.length; l++) {
                             let input = document.createElement('input');
                             input.setAttribute("value", arrayColors[l])
                             input.setAttribute("type", "color")
                             form2.append(input);
                         }
-                    } else if (k == 'technologies') {
-                        let select = document.createElement('select');
-                        select.setAttribute("multiple", "true");
-                        form2.append(select);
-                        arrayTeсhnology = array[i].input[k];
-                        for (let p = 0; p < arrayTeсhnology.length; p++) {
-                            let option = document.createElement('option')
-                            option.innerHTML = arrayTeсhnology[p];
-                            select.append(option);
+                } else {
+                    for (let k of inputKeys) {
+                        console.log(inputKeys)
+                        if (Array.isArray(array[i].input[k])) {
+                            let select = document.createElement('select');
+                            select.setAttribute("multiple", "true");
+                            form2.append(select);
+                            arraySelect = array[i].input[k];
+                            for (let p = 0; p < arraySelect.length; p++) {
+                                let option = document.createElement('option')
+                                option.innerHTML = arraySelect[p];
+                                select.append(option);
+                            }
                         }
-                    } else if (array[i].input[k] !== 'color' && array[i].input['type'] !== 'textarea' && array[i].input['type'] !== 'technology') {
-                        input.setAttribute(k, array[i].input[k])
-                        form2.append(input);
                     }
                 }
             }
@@ -110,7 +162,8 @@ function andere(arrayKeys) {
     for (let m in arrayKeys) {
         if (arrayKeys[m] == 'fields') {
             let arrayFields = object[arrayKeys[m]];
-            createForm(arrayFields);
+            createInput2(arrayFields);
+            
         } else if (arrayKeys[m] == 'references') {
             let arrayReferences = object[arrayKeys[m]];
             createReferences(arrayReferences);
@@ -122,6 +175,7 @@ function andere(arrayKeys) {
         }
     }
 }
+
 
 andere(arrayKeys);
 

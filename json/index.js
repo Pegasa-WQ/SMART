@@ -1,54 +1,24 @@
-const json = `{
-    "name":"register",
-    "fields":[
-    {
-        "input":{
-            "type":"text",
-            "required":true,
-            "placeholder":"Enter full name"
-        }
-    },
-    {
-        "input":{
-            "type":"email",
-            "required":true,
-            "placeholder":"Enter email"
-        }
-    },
-    {
-        "input":{
-            "type":"password",
-            "required":true,
-            "placeholder":"password"
-        }
-    },
-    {
-        "input":{
-            "type":"password",
-            "required":true,
-            "placeholder":"Confirm password"
-        }
-    }
-    ],
-    "references":[
-        {
-            "text without ref":"Already have account?",
-            "text":"Login",
-            "ref":"signin"
-        }
-    ],
-    "buttons":[
-    {
-        "text":"Sign Up"
-    }
-]
-}`;
+const input = document.getElementById('input');
+let endFile = 0;
+const container = document.querySelector('.container');
+
+function download(input) {
+    let file = input.files[0];
+
+
+    let reader = new FileReader();
+
+    reader.readAsText(file);
+
+    reader.onload = function () {
+        endFile = reader.result;
+    };
+
+}
+
 
 const h1 = document.getElementsByTagName('h1');
-const form = document.getElementById('form');
-
-let object = JSON.parse(json);
-let objectKeys = Object.keys(object);
+let form = 0;
 let label = 0;
 let div = 0;
 
@@ -65,12 +35,11 @@ function createInput(array) {
                 if (['email', 'password', 'number', 'file', 'text', 'date', 'checkbox'].includes(array[i].input['type'])) {
                     let input = document.createElement('input');
                     for (let k of inputKeys) {
-                        console.log(k)
                         if (inputKeys.includes('mask')) {
                             array[i].input['type'] = 'text';
                             let im = new Inputmask(array[i].input['mask']);
                             im.mask(input);
-                        } 
+                        }
                         if (k !== 'mask' && k !== 'filetype' && k !== 'checked') {
                             input.setAttribute(k, array[i].input[k])
                         } else if (k == 'mask') {
@@ -121,7 +90,6 @@ function createReferences(array) {
                 let input = document.createElement('input');
                 inputKeys = Object.keys(array[i].input)
                 for (let k of inputKeys) {
-                    console.log(k)
                     if (k !== 'checked') {
                         input.setAttribute(k, array[i].input[k])
                         div.append(input);
@@ -152,22 +120,44 @@ function createButton(element) {
     return button;
 }
 
-function andere(objectKeys) {
-    for (let key in objectKeys) {
-        if (objectKeys[key] == 'fields') {
-            let arrayFields = object[objectKeys[key]];
+function andere(array, object) {
+    container.append(form);
+    for (let key in array) {
+        if (array[key] == 'fields') {
+            let arrayFields = object[array[key]];
             createInput(arrayFields);
 
-        } else if (objectKeys[key] == 'references') {
-            let arrayReferences = object[objectKeys[key]];
+        } else if (array[key] == 'references') {
+            let arrayReferences = object[array[key]];
             createReferences(arrayReferences);
         }
-        else if (objectKeys[key] == 'buttons') {
-            object[objectKeys[key]].forEach(el => form.append(createButton(el)));
+        else if (array[key] == 'buttons') {
+            object[array[key]].forEach(el => form.append(createButton(el)));
         }
     }
 }
 
 
-andere(objectKeys);
 
+
+
+window.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#button').addEventListener('click', function () {
+        if (endFile !== 0 && form == 0) {
+            form = document.createElement('form')
+            let object = JSON.parse(`${endFile}`);
+            let objectKeys = Object.keys(object);
+            andere(objectKeys, object);
+            endFile = 0;
+        }
+    })
+})
+
+window.addEventListener('DOMContentLoaded', function () {
+    document.querySelector('#dropping').addEventListener('click', function () {
+        form.remove();
+        input.value = '';
+        endFile = 0;
+        form = 0;
+    })
+})
